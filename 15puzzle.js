@@ -30,3 +30,8 @@ for (let i = 0; i < 4; i++) {
 }
 
 let solveButton = document.querySelector('button');
+
+function solve(puzzle) {
+}
+
+solveButton.onclick = (e) => solve(puzzle);
