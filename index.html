@@ -1,10 +1,61 @@
 <!DOCTYPE html>
 <html>
-  <body style='display: grid; place-items: center; height: 100vh; width: 100vw; margin: 0'>
-    <div id='puzzle' style='display: grid; grid-template-columns: repeat(4, 40px); grid-template-rows: repeat(4, 40px); gap: 5px; border: 1px solid black; border-radius: 5px; padding: 5px;'>
+  <style>
+    #puzzle {
+      display: grid; 
+      grid-template-columns: repeat(4, 40px); 
+      grid-template-rows: repeat(4, 40px); 
+      gap: 5px; 
+      border: 1px solid black; 
+      border-radius: 5px; 
+      padding: 5px;
+    }
 
+    body {
+      display: grid; 
+      place-items: center; 
+      height: 100vh; 
+      width: 100vw; 
+      margin: 0;
+      background-color: lightslategray;
+    }
+
+    @keyframes slideUp {
+      from {
+        bottom: 0%;
+      }
+      to {
+        bottom: 100%;
+      }
+    }
+    @keyframes slideDown {
+      from {
+        top: 0%;
+      }
+      to {
+        top: 100%;
+      }
+    }
+    @keyframes slideLeft {
+      from {
+        right: 0%;
+      }
+      to {
+        right: 100%;
+      }
+    }
+    @keyframes slideRight {
+      from {
+        left: 0%;
+      }
+      to {
+        left: 100%;
+      }
+    }
+  </style>
+  <body>
+    <div id='puzzle'>
     </div>
-    <button>solve</button>
   </body>
   <script src='15puzzle.js'></script>
 </html>
