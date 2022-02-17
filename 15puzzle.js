@@ -135,7 +135,7 @@ for (let i = 0; i < 4; i++) {
       newEntry.style.gridColumnEnd = String(j + 2);
       newEntry.style.cursor = 'pointer';
       newEntry.innerText = extractedNum;
-      newEntry.onclick = function (e) {
+      function newEntryClickTouchHandler(e) {
         let elementGridRowStart = Number(e.target.style.gridRowStart) - 1;
         let elementGridColumnStart = Number(e.target.style.gridColumnStart) - 1;
         if (elementGridRowStart === locationZero[0] - 1 && elementGridColumnStart === locationZero[1]) {
@@ -148,6 +148,8 @@ for (let i = 0; i < 4; i++) {
           triggerChange(3);
         }
       }
+      newEntry.onclick = newEntryClickTouchHandler;
+      newEntry.ontouchstart = newEntryClickTouchHandler;
     } else {
       locationZero[0] = i;
       locationZero[1] = j;
